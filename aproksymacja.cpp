@@ -39,7 +39,6 @@ int main() {
 	file.close();
 
 	// ---------------------- calculating h(x) for linear function ----------------------
-
 	// create matrices to solve the equation: A*X = B
 
 	double** matrixA = new double*[2];
@@ -49,7 +48,6 @@ int main() {
 	double** matrixB = new double*[2];
 	for (int i = 0; i < 2; ++i)
 		matrixB[i] = new double[1]{ 0.0 };
-
 
 	// creating equations 2x2 to calculate h(xi)
 
@@ -70,7 +68,7 @@ int main() {
 	}
 
 	for (int i = 0; i < size; ++i) {
-		matrixB[1][0] += arr[i][0]* arr[i][1];
+		matrixB[1][0] += arr[i][0] * arr[i][1];
 	}
 
 	//cout << matrixA[0][0] << endl;
