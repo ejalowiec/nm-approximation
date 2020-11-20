@@ -44,21 +44,61 @@ int main() {
 
 	double** matrixA = new double*[2];
 	for (int i = 0; i < 2; ++i)
-		matrixA[i] = new double[2];
+		matrixA[i] = new double[2]{ 0.0 };
 
 	double** matrixB = new double*[2];
 	for (int i = 0; i < 2; ++i)
-		matrixB[i] = new double[1];
+		matrixB[i] = new double[1]{ 0.0 };
 
 
-	// solving the linear equation (2x2) using the coefficient matrix method
+	// creating equations 2x2 to calculate h(xi)
 
+	matrixA[0][0] = size;
+	
 	for (int i = 0; i < size; ++i) {
-
-
+		matrixA[0][1] += arr[i][0];
 	}
 
+	for (int i = 0; i < size; ++i) {
+		matrixA[1][1] += arr[i][0] * arr[i][0];
+	}
 
+	matrixA[1][0] = matrixA[0][1];
+
+	for (int i = 0; i < size; ++i) {
+		matrixB[0][0] += arr[i][1];
+	}
+
+	for (int i = 0; i < size; ++i) {
+		matrixB[1][0] += arr[i][0]* arr[i][1];
+	}
+
+	//cout << matrixA[0][0] << endl;
+	//cout << matrixA[0][1] << endl;
+	//cout << matrixA[1][0] << endl;
+	//cout << matrixA[1][1] << endl;
+	//cout << matrixB[0][0] << endl;
+	//cout << matrixB[1][0] << endl;
+
+	// solving the linear equation (2x2) using the determinant matrix method
+
+	double Wa = 0.0;
+	double Wa0 = 0.0;
+	double Wa1 = 0.0;
+	double a0 = 0.0;
+	double a1 = 0.0;
+
+	Wa = (matrixA[0][0] * matrixA[1][1]) - (matrixA[0][1] * matrixA[1][0]);
+	cout << "Wa: " << Wa << endl;
+	Wa1 = (matrixA[0][0] * matrixB[1][0]) - (matrixB[0][0] * matrixA[1][0]);
+	cout << "Wa1: " << Wa1 << endl;
+	Wa0 = (matrixB[0][0] * matrixA[1][1]) - (matrixA[0][1] * matrixB[1][0]);
+	cout << "Wa0: " << Wa0 << endl;
+
+	a0 = Wa0 / Wa;
+	cout << "a0: " << a0 << endl;
+	a1 = Wa1 / Wa;
+	cout << "a1: " << a1 << endl;
 
 	// ---------------------- displaying results ----------------------
 	// 1.
@@ -72,4 +112,6 @@ int main() {
 				cout << "\n";
 		}
 	}
+	// 3.
+	cout << "Equation of the approximating linear function:\nh(x) = " << a1 << "x + " << a0 << endl;
 }
