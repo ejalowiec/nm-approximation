@@ -37,17 +37,6 @@ int main() {
 
 	file.close();
 
-	cout << size << endl;
-
-	// display read file
-
-	//for (int i = 0; i < size; ++i) {
-	//	for (int j = 0; j < 2; ++j) {
-	//		cout << arr[i][j] << " ";
-	//		if (j == 1)
-	//			cout << "\n";
-	//	}
-	//}
 
 
 
@@ -57,5 +46,16 @@ int main() {
 
 
 
-
+	// ---------------------- displaying results ----------------------
+	// 1.
+	cout << "Number of given points: " << size << endl;
+	// 2.
+	cout << "Node:     Value:" << endl;
+	for (int i = 0; i < size; ++i) {
+		for (int j = 0; j < 2; ++j) {
+			cout << arr[i][j] << "        ";
+			if (j == 1)
+				cout << "\n";
+		}
+	}
 }
