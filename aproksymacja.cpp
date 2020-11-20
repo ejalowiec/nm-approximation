@@ -89,16 +89,16 @@ int main() {
 	double a1 = 0.0;
 
 	Wa = (matrixA[0][0] * matrixA[1][1]) - (matrixA[0][1] * matrixA[1][0]);
-	cout << "Wa: " << Wa << endl;
+	//cout << "Wa: " << Wa << endl;
 	Wa1 = (matrixA[0][0] * matrixB[1][0]) - (matrixB[0][0] * matrixA[1][0]);
-	cout << "Wa1: " << Wa1 << endl;
+	//cout << "Wa1: " << Wa1 << endl;
 	Wa0 = (matrixB[0][0] * matrixA[1][1]) - (matrixA[0][1] * matrixB[1][0]);
-	cout << "Wa0: " << Wa0 << endl;
+	//cout << "Wa0: " << Wa0 << endl;
 
 	a0 = Wa0 / Wa;
-	cout << "a0: " << a0 << endl;
+	//cout << "a0: " << a0 << endl;
 	a1 = Wa1 / Wa;
-	cout << "a1: " << a1 << endl;
+	//cout << "a1: " << a1 << endl;
 
 	// ---------------------- displaying results ----------------------
 	// 1.
