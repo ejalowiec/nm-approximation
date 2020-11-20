@@ -1,8 +1,8 @@
 ﻿// https://github.com/ejalowiec/nm-approximation
 #include <iostream>
 #include <fstream>
-#include <mkl_lapack.h>
-#include <math.h>
+//#include <mkl_lapack.h>
+//#include <math.h>
 
 
 using namespace std;
