@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <mkl_lapack.h>
+#include <math.h>
 
 
 using namespace std;
@@ -11,7 +12,7 @@ int main() {
 	// ---------------------- reading file ----------------------
 
 	fstream file;
-	file.open("ex1.txt", ios::in);
+	file.open("test.txt", ios::in);
 
 	if (!file.good()) {
 		cerr << "File does not exist";
@@ -37,12 +38,25 @@ int main() {
 
 	file.close();
 
+	// ---------------------- calculating h(x) for linear function ----------------------
+
+	// create matrices to solve the equation: A*X = B
+
+	double** matrixA = new double*[2];
+	for (int i = 0; i < 2; ++i)
+		matrixA[i] = new double[2];
+
+	double** matrixB = new double*[2];
+	for (int i = 0; i < 2; ++i)
+		matrixB[i] = new double[1];
 
 
+	// solving the linear equation (2x2) using the coefficient matrix method
+
+	for (int i = 0; i < size; ++i) {
 
 
-
-
+	}
 
 
 
@@ -50,10 +64,10 @@ int main() {
 	// 1.
 	cout << "Number of given points: " << size << endl;
 	// 2.
-	cout << "Node:     Value:" << endl;
+	cout << "Node:\t\tValue:" << endl;
 	for (int i = 0; i < size; ++i) {
 		for (int j = 0; j < 2; ++j) {
-			cout << arr[i][j] << "        ";
+			cout << arr[i][j] << "\t\t";
 			if (j == 1)
 				cout << "\n";
 		}
