@@ -114,4 +114,16 @@ int main() {
 	}
 	// 3.
 	cout << "Equation of the approximating linear function:\nh(x) = " << a1 << "x + " << a0 << endl;
+
+	for (int i = 0; i < size; ++i) {
+		delete[] arr[i];
+	}
+
+	for (int i = 0; i < 2; ++i) {
+		delete[] matrixA[i];
+		delete[] matrixB[i];
+	}
+
+	delete[] matrixA;
+	delete[] matrixB;
 }
